@@ -12,9 +12,9 @@ class Scrabble
   end
 
   def score
-    return 0 if @word.nil?
+    return 0 if (@word.nil? or @word.empty?)
     values = @word.chars.map{|char| @letter_lookup.fetch(char,0)}
-    sum = values.inject(0, &:+)
+    sum = values.inject(:+)
   end
 
   def self.score(word)
