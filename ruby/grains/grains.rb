@@ -1,16 +1,10 @@
 class Grains
-  
-  def square(i)
-    2**(i-1)
-    ## The formula to find the amount of grains on tile i of the
-    #chessboard is 2^(i-1).
-  end
+  def square(i) 2**(i-1) end 
+  ## The formula to find the amount of grains on tile i of the
+  #chessboard is 2^(i-1).
 
   def total
-    sum = 0
-    (1..64).each do |place|
-      sum += square(place)
-    end
-    sum
+    squares = (1..64).map{|i| square(i)}
+    squares.inject(:+)
   end
 end
