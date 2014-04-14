@@ -1,8 +1,8 @@
 require 'pry'
 class Proverb
   def initialize(*chain)
-    @chain = *chain 
-    if @chain.last.class == Hash
+    @chain = chain 
+    if @chain.last.is_a? Hash
       @qualifier = @chain.pop[:qualifier]
     else
       @qualifier = nil
@@ -10,21 +10,23 @@ class Proverb
   end
 
   def to_s
-    string = ""
-    (1...@chain.length).each do |i|
-      string << line(@chain[i-1], @chain[i])
-    end
-    string << last_line(@chain[0])
+    mid_lines + last_line
   end 
 
   private
 
-  def line(word1, word2)
+  def mid_lines
+    @chain.each_cons(2).map do |word1, word2|
+       mid_line(word1,word2)
+    end.join
+  end
+
+  def mid_line(word1, word2)
     "For want of a #{word1} the #{word2} was lost.\n"
   end
 
-  def last_line(word)
-    "And all for the want of a #{qualifier}#{word}."
+  def last_line
+    "And all for the want of a #{qualifier}#{@chain[0]}."
   end
 
   def qualifier
