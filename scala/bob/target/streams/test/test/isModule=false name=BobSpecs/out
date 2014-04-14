@@ -1,0 +1,17 @@
+[0m[[0minfo[0m] [0m[32mBobSpecs:[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to a statement[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to shouting[0m[0m
+[0m[[0minfo[0m] [0m[32m- should respond to questions[0m[0m
+[0m[[0minfo[0m] [0m[33m- should allow questions to end with numbers (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should respond to talking forcefully (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should allow acroynms in regular speech (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should see forceful questions as shouting (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should allow numbers when shouting (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should see only numbers as speech (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should respond to questions with only numbers (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should respond to shouting with no exclamation mark (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should respond to statements with ? in the middle (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should respond to prattling on (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should respond to silence (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should respond to prolonged silence (pending)[0m[0m
+[0m[[0minfo[0m] [0m[33m- should respond to multiple line questions (pending)[0m[0m

@@ -1,0 +1,8 @@
+Bob
+a = new Bob.hey("Gasd")
+exit
+compile
+package
+publish
+lexit
+exit
