@@ -1,5 +1,4 @@
 class School
-  attr_reader :students
 
   def initialize
     @students = []
@@ -18,9 +17,8 @@ class School
   end
 
   def grade(grade)
-@students.select{|s| s.grade == grade}.map{|s| s.name}.sort
-end
-
+    @students.select{|s| s.grade == grade}.map{|s| s.name}.sort
+  end
 
   private
   def grades
