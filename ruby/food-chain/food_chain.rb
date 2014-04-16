@@ -24,28 +24,31 @@ class FoodChainSong
   end
 
   def build_animals
-    fly =  Animal.new("fly")
-    spider = Animal.new("spider", "It wriggled and jiggled and tickled inside her.", append: " that wriggled and jiggled and tickled inside her", catches: fly)
-    bird = Animal.new("bird", "How absurd to swallow a bird!", catches: spider)
-    cat = Animal.new("cat", "Imagine that, to swallow a cat!", catches: bird)
-    dog = Animal.new("dog", "What a hog, to swallow a dog!", catches: cat)
-    goat = Animal.new("goat", "Just opened her throat and swallowed a goat!", catches: dog)
-    cow = Animal.new("cow", "I don't know how she swallowed a cow!", catches: goat)
-    horse = Animal.new("horse", "She's dead, of course!", catches: cow, died: true)
-    [fly, spider, bird, cat, dog, goat, cow, horse]
+    animals =  [["fly"],
+                ["spider", "It wriggled and jiggled and tickled inside her.",  " that wriggled and jiggled and tickled inside her"],
+                ["bird", "How absurd to swallow a bird!"],
+                ["cat", "Imagine that, to swallow a cat!"],
+                ["dog", "What a hog, to swallow a dog!"],
+                ["goat", "Just opened her throat and swallowed a goat!"],
+                ["cow", "I don't know how she swallowed a cow!"],
+                ["horse",  "She's dead, of course!", nil, true]]
+    animals.map!{|a| Animal.new(*a)}
+    (1...animals.length).each { |i| animals[i].catches = animals[i - 1] }
+    animals
   end
 
 end
 
 class Animal
   attr_reader :name, :phrase, :died, :append, :catches
+  attr_writer :catches
 
-  def initialize(name, phrase = nil, options = {})
+  def initialize(name, phrase = nil, append = nil, died = false)
     @name = name
     @phrase = phrase
-    @died = options[:died] || nil
-    @append = options[:append] || ""
-    @catches = options[:catches] || nil
+    @append = append
+    @died = died
+    @catches = nil
   end
 
   def catch_line
