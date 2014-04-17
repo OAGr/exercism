@@ -1,6 +1,6 @@
 class FoodChainSong
   def initialize
-    @animals = build_animals
+    @animals = generate_animals
     @verses = [nil] + @animals.map{|a| Verse.new(a).sing}
   end
 
@@ -16,7 +16,7 @@ class FoodChainSong
     @verses[i]
   end
 
-  def build_animals
+  def generate_animals
     animals =  [["fly"],
                 ["spider", "It wriggled and jiggled and tickled inside her.",  " that wriggled and jiggled and tickled inside her"],
                 ["bird", "How absurd to swallow a bird!"],
