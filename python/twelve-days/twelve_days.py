@@ -1,3 +1,5 @@
+#1 hour 15 minutes with minor distractions
+
 def sing():
     return verses(1,12)
 
