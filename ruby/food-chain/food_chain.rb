@@ -17,14 +17,36 @@ class FoodChainSong
   end
 
   def generate_animals
-    animals =  [["fly"],
-                ["spider", "It wriggled and jiggled and tickled inside her.",  " that wriggled and jiggled and tickled inside her"],
-                ["bird", "How absurd to swallow a bird!"],
-                ["cat", "Imagine that, to swallow a cat!"],
-                ["dog", "What a hog, to swallow a dog!"],
-                ["goat", "Just opened her throat and swallowed a goat!"],
-                ["cow", "I don't know how she swallowed a cow!"],
-                ["horse",  nil , nil, true]]
+    animals =  [
+                ["fly"],
+                [
+                  "spider", 
+                  "It wriggled and jiggled and tickled inside her.",  
+                  " that wriggled and jiggled and tickled inside her"
+                ],
+                [
+                  "bird", 
+                  "How absurd to swallow a bird!"
+                ],
+                [
+                  "cat", 
+                  "Imagine that, to swallow a cat!"
+                ],
+                [
+                  "dog", 
+                  "What a hog, to swallow a dog!"
+                ],
+                [
+                  "goat", 
+                  "Just opened her throat and swallowed a goat!"
+                ],
+                [
+                  "cow", 
+                  "I don't know how she swallowed a cow!"
+                ],
+                [
+                  "horse", nil, nil, true
+                ]]
     animals.map!{|animal| Animal.new(*animal)}
     (1...animals.length).each { |i| animals[i].catches = animals[i - 1] }
     animals
