@@ -2,6 +2,7 @@ gem 'minitest', '~> 4.2'
 require 'minitest/autorun'
 require 'minitest/pride'
 require_relative 'food_chain'
+require 'pry'
 
 class FoodChainTest < MiniTest::Unit::TestCase
   attr_reader :song
